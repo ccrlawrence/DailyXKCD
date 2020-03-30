@@ -9,6 +9,8 @@ Module.register("DailyXKCD", {
         titleFont : "bright large light",
         altTextFont : "xsmall dimmed",
         limitComicHeight : 450,
+        maxComicHeight: 0,
+        maxComicWidth: 0,
         scrollInterval : 8000, // 8 seconds,
         scrollRatio : 0.8, // scroll by 80% of visible height,
         randomComic : false,
@@ -104,6 +106,16 @@ Module.register("DailyXKCD", {
         {
             comicWrapper.style.maxHeight = this.config.limitComicHeight + "px";
         }
+        if (this.config.maxComicHeight > 0)
+        {
+            comicWrapper.style.maxHeight = this.config.maxComicHeight + "px";
+        }
+        if (this.config.maxComicWidth > 0)
+        {
+            comicWrapper.style.maxWidth = this.config.maxComicWidth + "px";
+        }
+        
+        
 
         var xkcd = document.createElement("img");
         xkcd.id = "xkcdcontent";
@@ -113,6 +125,14 @@ Module.register("DailyXKCD", {
                                 (this.config.grayScale ? "grayscale(100%) " : "") +
                                 (this.config.invertColors ? "invert(100%) " : "") +
                                 ";")
+        }
+        if (this.config.maxComicHeight > 0)
+        {
+            xkcd.style.height = "100%";
+        }
+        if (this.config.maxComicWidth > 0)
+        {
+            xkcd.style.width = "100%";
         }
         comicWrapper.appendChild(xkcd);
 
