@@ -108,11 +108,11 @@ Module.register("DailyXKCD", {
         }
         if (this.config.maxComicHeight > 0)
         {
-            comicWrapper.style.maxHeight = this.config.maxComicHeight + "px";
+            comicWrapper.style.height = this.config.maxComicHeight + "px";
         }
         if (this.config.maxComicWidth > 0)
         {
-            comicWrapper.style.maxWidth = this.config.maxComicWidth + "px";
+            comicWrapper.style.width = this.config.maxComicWidth + "px";
         }
         
         
@@ -128,11 +128,11 @@ Module.register("DailyXKCD", {
         }
         if (this.config.maxComicHeight > 0)
         {
-            xkcd.style.height = "100%";
+            xkcd.style.maxHeight = "100%";
         }
         if (this.config.maxComicWidth > 0)
         {
-            xkcd.style.width = "100%";
+            xkcd.style.maxWidth = "100%";
         }
         comicWrapper.appendChild(xkcd);
 
